@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h> // 프레임웤~
 #import "Fraction.h"
+#import "Calculator.h"
 
 @interface Engine : NSObject
 - (void) startEngine; // - 기호는
@@ -45,7 +46,15 @@ int main(int argc, const char * argv[]) {
         
         NSLog(@"My Numerator and Dominator are.. %i and %i",[fraction numerator], [fraction denominator] );
         [fraction print];
-    
+        
+        
+        Calculator *myCal = [[Calculator alloc] init];
+        [myCal setAccumulator:300.03];
+        [myCal add:2938];
+        [myCal multiply:2.33];
+        [myCal divide:229.11];
+        [myCal subtract:20.32];
+        NSLog(@"The result is %g", [myCal accumulator]);
     }
     return 0;
 }
