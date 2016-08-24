@@ -7,54 +7,104 @@
 //
 
 #import <Foundation/Foundation.h> // 프레임웤~
-#import "Fraction.h"
-#import "Calculator.h"
 
-@interface Engine : NSObject
-- (void) startEngine; // - 기호는
-- (void) setName: (NSString *) name
-         withAge:(int)age; //setName:withAge:
+@interface Shape : NSObject
+- (void) draw;
 @end
 
-@implementation Engine{
-    NSString* engineName;
-    int age;
+@implementation Shape {
+    float x, y;
+    float width, height;
+    NSString *color;
 }
 
-- (void) startEngine {
-    NSLog(@"Start Engine.");
+- (id) init
+{
+    self = [super init];
+    if(self) {
+        x = 0;
+        y = 0;
+        width = 10;
+        height = 10;
+        color = @"Black";
+    }
+    return self;
 }
 
-- (void) setName:(NSString *)name withAge:(int)newAge{
-    engineName = name;
+- (void) setX:(float)newX
+    withnewY :(float)newY
+{
+    x = newX;
+    y = newY;
 }
 
+- (void) setWidth : (float)newW
+       withHeight : (float)newH
+{
+    
+    width = newW;
+    height = newH;
+}
+
+-(void) setColor : (NSString *) newColor
+{
+    color = newColor;
+}
+
+- (void) draw {
+    NSLog(@"공통그리기로직");
+    NSLog(@"X= %g, Y = %g, W=%g, H = %g", x, y, width, height);
+    NSLog(@"Color = %@", color);
+}
 @end
 
-// +  클래스 메소드 , - 인스턴스메소드
+@interface Rectangle : Shape
+@end
 
+@implementation Rectangle
+
+-(void) draw {
+    [super draw];
+    NSLog(@"사각형 그리기");
+}
+@end
+
+//원
+@interface Circle : Shape
+@end
+
+@implementation Circle
+
+-(void)draw {
+    [super draw]; // 부모 불러놓고~!
+    NSLog(@"원 그리기");
+}
+@end
+
+//슈퍼써클
+@interface SuperCircle : Circle
+@end
+@implementation SuperCircle
+-(void)draw{
+    [super draw];
+    NSLog(@"반짝 반짝");
+}
+
+    @end
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        
-        Engine *engine = [[Engine alloc] init]; // 대괄호 사용하여 alloc 메모리 할당 후 init 하는 단계를 한단계로 통합
-        [engine startEngine];
-        [engine setName:@"BMW" withAge: 17];
-        Fraction *fraction = [[Fraction alloc] init];
-        [fraction setNumerator:30];
-        [fraction setDenominator:12];
-        
-        NSLog(@"My Numerator and Dominator are.. %i and %i",[fraction numerator], [fraction denominator] );
-        [fraction print];
+        Circle *myCircle = [[Circle alloc] init];
+        Rectangle *myRectangle = [[Rectangle alloc] init];
+        SuperCircle *superCircle = [[SuperCircle alloc] init];
         
         
-        Calculator *myCal = [[Calculator alloc] init];
-        [myCal setAccumulator:300.03];
-        [myCal add:2938];
-        [myCal multiply:2.33];
-        [myCal divide:229.11];
-        [myCal subtract:20.32];
-        NSLog(@"The result is %g", [myCal accumulator]);
+        [myCircle setColor: @"Red"];
+        [myCircle setX:30.5 withnewY:40.2];
+        [myCircle setWidth:30.2 withHeight:20.1];
+        [myCircle draw];
+        [myRectangle draw];
+        [superCircle draw];
     }
     return 0;
 }
