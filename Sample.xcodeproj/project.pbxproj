@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE2CC28C1D6E6DC80053A8DF /* Engine.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2CC28B1D6E6DC80053A8DF /* Engine.m */; };
+		CE2CC28F1D6E714E0053A8DF /* Tire.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2CC28E1D6E714E0053A8DF /* Tire.m */; };
+		CE2CC2921D6E723F0053A8DF /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2CC2911D6E723F0053A8DF /* Car.m */; };
 		CE5C2AC91D6C263600E28E5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5C2AC81D6C263600E28E5A /* main.m */; };
 		CE5C2AD11D6C3FC600E28E5A /* Fraction.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5C2AD01D6C3FC600E28E5A /* Fraction.m */; };
 		CE5C2AD41D6C440B00E28E5A /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5C2AD31D6C440B00E28E5A /* Calculator.m */; };
@@ -25,6 +28,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CE2CC28A1D6E6DC80053A8DF /* Engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Engine.h; path = ../Engine.h; sourceTree = "<group>"; };
+		CE2CC28B1D6E6DC80053A8DF /* Engine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Engine.m; path = ../Engine.m; sourceTree = "<group>"; };
+		CE2CC28D1D6E714E0053A8DF /* Tire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tire.h; sourceTree = "<group>"; };
+		CE2CC28E1D6E714E0053A8DF /* Tire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tire.m; sourceTree = "<group>"; };
+		CE2CC2901D6E723F0053A8DF /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
+		CE2CC2911D6E723F0053A8DF /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
 		CE5C2AC51D6C263600E28E5A /* Sample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Sample; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5C2AC81D6C263600E28E5A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CE5C2ACF1D6C3FC600E28E5A /* Fraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fraction.h; sourceTree = "<group>"; };
@@ -63,11 +72,17 @@
 		CE5C2AC71D6C263600E28E5A /* Sample */ = {
 			isa = PBXGroup;
 			children = (
+				CE2CC28A1D6E6DC80053A8DF /* Engine.h */,
+				CE2CC28B1D6E6DC80053A8DF /* Engine.m */,
 				CE5C2AC81D6C263600E28E5A /* main.m */,
+				CE2CC28D1D6E714E0053A8DF /* Tire.h */,
+				CE2CC28E1D6E714E0053A8DF /* Tire.m */,
 				CE5C2AD21D6C440B00E28E5A /* Calculator.h */,
 				CE5C2AD31D6C440B00E28E5A /* Calculator.m */,
 				CE5C2ACF1D6C3FC600E28E5A /* Fraction.h */,
 				CE5C2AD01D6C3FC600E28E5A /* Fraction.m */,
+				CE2CC2901D6E723F0053A8DF /* Car.h */,
+				CE2CC2911D6E723F0053A8DF /* Car.m */,
 			);
 			path = Sample;
 			sourceTree = "<group>";
@@ -128,7 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE2CC2921D6E723F0053A8DF /* Car.m in Sources */,
+				CE2CC28F1D6E714E0053A8DF /* Tire.m in Sources */,
 				CE5C2AD41D6C440B00E28E5A /* Calculator.m in Sources */,
+				CE2CC28C1D6E6DC80053A8DF /* Engine.m in Sources */,
 				CE5C2AC91D6C263600E28E5A /* main.m in Sources */,
 				CE5C2AD11D6C3FC600E28E5A /* Fraction.m in Sources */,
 			);
@@ -221,6 +239,7 @@
 		CE5C2ACD1D6C263600E28E5A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -228,6 +247,7 @@
 		CE5C2ACE1D6C263600E28E5A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -251,6 +271,7 @@
 				CE5C2ACE1D6C263600E28E5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
